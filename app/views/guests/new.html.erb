@@ -1,0 +1,21 @@
+<h1>Create a New Guest</h1>
+
+<%= form_for @guest do |f| %>
+<%= f.label :name  %>
+<%= f.text_field :name %>
+<%= f.label :occupation %>
+<%= f.text_field :occupation %>
+<%= f.label :rating %>
+<%= f.number_field :rating %>
+<%= f.submit "Create Guest" %>
+<% end %>
+
+
+
+<!-- As a user, I should be able to create a new
+appearance for a guest. The Appearance should be
+associated with an episode and be associated with
+that guest. Remember that we can have the same guest
+on the show many times. The appearance should also
+have a rating on a 1-5 scale so we can keep track of
+ what guests we'd like to have back on the show. -->

@@ -1,0 +1,10 @@
+<h3>Guests that appear in this episode </h3>
+
+<% @guests.each do |guest| %>
+<%= guest.name %>
+<% end %>
+
+
+
+
+As a user, I should be able to view all of the guests for a particular episode. This means that we'll need an episodes show page that lists out all of the guests who were on that episode.
