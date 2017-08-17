@@ -4,17 +4,14 @@ class SessionsController < ApplicationController
   end
 
   def create
-    @user = User.find_by(:name => params[:user][:name])
-    if @user && @user.authenticate(params[:user][:password])
-      session[:user_id] = @user.id
-      redirect_to user_path(@user)
+    byebug
+    user = User.find_by(:username => params[:username])
+    if user.present? && user.authenticate(params[:password])
+      session[:user_id] = user.id
+      redirect_to episodes_path
     else
-      redirect_to
+      render 'new'
+    end
   end
 
 end
-
-# As a user, I should be able to login. Build out
-# Login Form so that our users can login.
-# To be RESTful - the form should post to '/sessions'
-# and go to our SessionsController#create action.
